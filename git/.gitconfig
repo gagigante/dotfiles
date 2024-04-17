@@ -1,6 +1,6 @@
 [user]
-	name = Gabriel Gigante
-	email = gabrielgigante29@gmail.com
+    name = Gabriel Gigante
+    email = gabrielgigante29@gmail.com
 
 [alias]
     # List available aliases
@@ -10,6 +10,7 @@
     ci = commit
     co = checkout
     st = status
+    ps = push
 
     # Display tree-like log, because default log is a pain…
     lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
@@ -32,5 +33,94 @@
     # Ensure that force-pushing won't lose someone else's work (only mine).
     push-with-lease = push --force-with-lease
 
+    # Delete merged branches for local your repository
+    drop-merged = !"git branch --merged | grep -vE 'main|master|\\*' | xargs -n 1 git branch -D"
+
+[core]
+    # Don't paginate output by default
+    pager = cat
+
+    editor = vim
+    
+    # Don't consider trailing space change as a cause for merge conflicts
+    whitespace = -trailing-space
+
+[diff]
+    # Use better, descriptive initials (c, i, w) instead of a/b.
+    mnemonicPrefix = true
+    
+    # Show renames/moves as such
+    renames = true
+
+[grep]
+    break = true
+    heading = true
+    lineNumber = true
+
+    # Consider most regexes to be ERE
+    extendedRegexp = true
+
+[log]
+    # Use abbrev SHAs whenever possible/relevant instead of full 40 chars
+    abbrevCommit = true
+  
+    # Automatically --follow when given a single path
+    follow = true
+
+[merge]
+  # Display common-ancestor blocks in conflict hunks
+  # conflictStyle = diff3
+  # Disable fast-forward merges as default merge strategy.
+  # Force explicit call of `git merge --ff …`.
+  ff = false
+  # Custom/dedicated merge drive for npm lock files (`package-lock.json`).
+  # Also works with Yarn.
+  # Use Git attributes to set targeted files (located at `~/.config/git/attributes``
+  # when installed with npm).
+  # See https://www.npmjs.com/package/npm-merge-driver
+  # [merge "npm-merge-driver"]
+  # name = automatically merge npm lockfiles
+  # driver = npx npm-merge-driver merge %A %O %B %P
+[mergetool]
+  # Clean up backup files created by merge tools on tool exit
+  keepBackup = false
+  # Clean up temp files created by merge tools on tool exit
+  keepTemporaries = false
+  # Put the temp files in a dedicated dir anyway
+  writeToTemp = true
+  # Auto-accept file prompts when launching merge tools
+  prompt = false
+# [page]
+  # Use custom pager to get an better log on terminal.
+  # As this is an external tool it has to be installed.
+  # See https://github.com/so-fancy/diff-so-fancy
+  # show = diff-so-fancy | less --tabs=4 -RFX
+[pull]
+    rebase = true
+
+[push]
+    # Default push should only push the current branch to its push target, regardless of its remote name
+    default = upstream
+
+    # When pushing, also push tags whose commit-ishs are now reachable upstream
+    followTags = true
+
+[status]
+    # Recursively traverse untracked directories to display all contents
+    showUntrackedFiles = all
+
+[tag]
+    # Sort tags as version numbers whenever applicable, so 1.10.2 is AFTER 1.2.0.
+    sort = version:refname
+
+[versionsort]
+    prereleaseSuffix = -pre
+    prereleaseSuffix = .pre
+    prereleaseSuffix = -beta
+    prereleaseSuffix = .beta
+    prereleaseSuffix = -rc
+    prereleaseSuffix = .rc
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+

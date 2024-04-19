@@ -1,0 +1,7 @@
+tap "homebrew/bundle"
+brew "neovim"
+tap "homebrew/cask"
+brew "starship"
+brew "gcc"
+brew "go"
+cask "visual-studio-code"

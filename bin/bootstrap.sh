@@ -136,6 +136,8 @@ link_file () {
 read_link_file() {
     local file_path=$1
     local src dst
+    
+    # TODO: handle not found file err
 
     while IFS= read -r line || [[ -n "$line" ]]; do
         src=$(eval echo "$line" | cut -d '=' -f 1)
@@ -148,18 +150,30 @@ read_link_file() {
 setup_git() {
     info "Setup git"
 
-   # returned_values=($(read_link_file "./git/links.prop"))
     values=($(read_link_file "./git/links.prop"))
 
     IFS=',' read -r src dst <<< "$values"
 
-    link_file $src $dst
+    link_file "$src" "$dst"
 
     success "Git setup finished\n"
 }
 
-setup_git
+setup_starship() {
+    info "Setup starship"
 
-# Setup startship
-# ./starship/install.sh
-# echo "hello"
+    info "Installing starship using Homebrew"
+    ./starship/install.sh
+
+    values=($(read_link_file "./starship/links.prop"))
+
+    IFS=',' read -r src dst <<< "$values"
+
+    link_file "$src" "$dst"
+
+    success "Starship setup finished\n"
+}
+
+setup_git
+setup_starship
+

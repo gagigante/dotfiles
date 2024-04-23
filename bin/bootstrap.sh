@@ -159,11 +159,31 @@ setup_git() {
     success "Git setup finished\n"
 }
 
+setup_brew() {
+    info "Setup homebrew"
+
+    info "Installing homebrew"
+    source ./brew/install.sh
+    
+    # TODO: install other software
+
+    success "Homebrew setup finished\n"
+}
+
+setup_fish() {
+    info "Setup fish"
+
+    info "Installing fish using Homebrew"
+    source ./fish/install.sh
+
+    success "Fish setup finished\n"
+}
+
 setup_starship() {
     info "Setup starship"
 
     info "Installing starship using Homebrew"
-    ./starship/install.sh
+    source ./starship/install.sh
 
     values=($(read_link_file "./starship/links.prop"))
 
@@ -175,5 +195,7 @@ setup_starship() {
 }
 
 setup_git
+setup_brew
+setup_fish
 setup_starship
 

@@ -11,11 +11,6 @@
 
 - Git
 
-
-
-- install brew if not installed
--
-
 ## 🏃 Usage
 
 ```shell
@@ -24,3 +19,21 @@ cd <this-repo>
 
 ./bin/bootstrap.sh
 ```
+
+## TODO
+
+- Package manager
+  - [x] Install brew if not installed
+  - [ ] Install from Brewfile
+
+- Terminal
+  - [x] Fish setup
+  - [ ] Cappuccino theme inside fish
+  - [x] Starship theme
+
+- Tooling
+  - [x] .gitconfig
+  - [ ] tmux
+  - [ ] nvim
+  - [ ] vscode
+  

@@ -8,4 +8,3 @@ else
     brew update
     success "Homebrew updated"
 fi
-

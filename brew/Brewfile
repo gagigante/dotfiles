@@ -1,7 +1,25 @@
 tap "homebrew/bundle"
-brew "neovim"
-tap "homebrew/cask"
+
+# Terminal
+cask "ghostty"
 brew "starship"
-brew "gcc"
-brew "go"
+
+# Shell plugins
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+
+# Editors
+# brew "neovim"
 cask "visual-studio-code"
+
+# Dev
+brew "git"
+brew "gh"
+cask "docker"
+cask "bruno"
+
+# Apps
+cask "google-chrome"
+cask "1password"
+cask "notion"
+cask "raycast"

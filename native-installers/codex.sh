@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#!/usr/bin/env bash
 
 if [[ $(command -v codex) == "" ]]; then
     curl -fsSL https://chatgpt.com/codex/install.sh | sh

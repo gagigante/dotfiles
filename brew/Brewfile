@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-
 # Terminal
 cask "ghostty"
 brew "starship"
@@ -15,7 +13,7 @@ cask "visual-studio-code"
 # Dev
 brew "git"
 brew "gh"
-cask "docker"
+cask "docker-desktop"
 cask "bruno"
 
 # Apps

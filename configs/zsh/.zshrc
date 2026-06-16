@@ -27,5 +27,8 @@ alias ...='cd ../..'
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # Starship
 eval "$(starship init zsh)"

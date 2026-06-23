@@ -60,6 +60,7 @@ The terminal is configured to use **JetBrainsMono Nerd Font**.
 - Claude Desktop
 - Golang
 - DBeaver
+- Figma
 
 ### App store
 

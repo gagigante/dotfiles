@@ -61,6 +61,7 @@ The terminal is configured to use **JetBrainsMono Nerd Font**.
 - Golang
 - DBeaver
 - Figma
+- Android Studio
 
 ### App store
 
